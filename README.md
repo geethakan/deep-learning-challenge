@@ -20,6 +20,26 @@ A csv file with metadata of more than 34K organizations is the dataset being use
 - IS_SUCCESSFUL—Was the money used effectively
 
 ### Preprocess
- - EIN and Name columns were dropped from the dataframe
+ - EIN and Name columns were dropped from the dataframe as they are neither features nor targets.
  - Column "IS_SUCCESSFUL" was identified as the target and remaining columns treated as features.
- - 
+ - Classification and Application_Type columns are binned to group less dense values together.
+ - Categorical data were converted to numerical values using pandas get_dummies function.
+ - Data is then split into training and testing datasets with default limits (75:25 for train:test dataset ratio)
+ - Training and testing features datasets are then scaled using Python sklearn StandardScalar function to standardize data.
+
+### Compile, Train and Evaluate the Model
+ - A Sequential model is created using keras interface and use Tensorflow deep learning network.
+ - Started off with 10 neurons in the first hidden layer and 8 neurons in the second hidden layer.
+ - Model was then compiled and fitted to training dataset.
+ - Accuracy was evaluated for test data and found to display a 72% accuracy
+
+### Optimization
+Couple of measures were undertaken to improve accuracy of the model.
+- Column STATUS although a good feature, was found to be Active for 99.9% of the organizations. Just 5 were not Active.
+- STATUS was dropped from feature set.
+- Train to test ratio adjusted to 60 to 40 percent.
+- Recommended 2-3 times nueron for hidden layer was followed and first hidden layer neuron count increased to 84
+- Accuracy was still not improved so after a couple variations, count was set to 70 for first layer, 50 for second layer and 30 for a third layer.
+- Epoch count and batch size were increased.
+- Target accuracy of 75% was not attained even after several tries and finally a 73% accuracy improvement was achieved.
+- Model was saved HDF5 file.
