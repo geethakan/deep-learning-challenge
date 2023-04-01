@@ -46,3 +46,6 @@ Couple of measures were undertaken to improve accuracy of the model.
 
 ### Summary
 Although stratify was specified, test accuracy is a little lower than training accuracy indicating some variance in the dataset. Range of numbers for income amount with hyphen might be one of the reason. Will be better to have the lower and upper values as numeric in separate columns. Keras tuner and more trials with other activations and nueron counts would be required to improve accuracy of prediction.
+
+![image](https://user-images.githubusercontent.com/113957254/229262684-e97204ff-fcb5-4de5-bbe1-95746c5b6038.png)
+
