@@ -43,3 +43,6 @@ Couple of measures were undertaken to improve accuracy of the model.
 - Epoch count and batch size were increased.
 - Target accuracy of 75% was not attained even after several tries and finally a 73% accuracy improvement was achieved.
 - Model was saved HDF5 file.
+
+### Summary
+Although stratify was specified, test accuracy is a little lower than training accuracy indicating some variance in the dataset. Range of numbers for income amount with hyphen might be one of the reason. Will be better to have the lower and upper values as numeric in separate columns. Keras tuner and more trials with other activations and nueron counts would be required to improve accuracy of prediction.
